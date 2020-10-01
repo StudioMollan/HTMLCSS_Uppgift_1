@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang=sv>
+
+<head>
+<style>
+.dropbtn {
+  background-color: lightgray;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: gray;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: lightgray;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+	<meta charset="UTF-8">
+	<title> Employee Survey</title>
+	
+</head>
+
+<body>
+<H1>This is a survey for all emplyees.</H1>	
+
+<form>
+<p><strong> State your name in the field below</strong></p>	
+<label for="fname">Name:</label><br>
+  <input type="text" id="fname" name="fname" size="35" maxlength="20">
+ <br><br>
+</form>
+
+<label for="w3review">Personal Information</label><br>
+<textarea id="w3review" name="w3review" rows="4" cols="30" style="background-color:orange;">
+Please write something useful about yourself. 
+</textarea>
+<br>
+
+<form>
+	<p><em> Do you practice any form of sport?</em></p>
+  <input type="radio" id="No" name="gender" value="No">
+  <label for="No">No</label><br>
+  <input type="radio" id="Yes" name="gender" value="Yes">
+  <label for="Yes">Yes</label><br>
+</form>
+
+<form>
+	<p> How do you prefer to read about <em>interesting things?</em></p>
+<input type="checkbox" id="Books" >
+<label for="Books">Books</label><br>
+<input type="checkbox" id="Newspapers" >
+<label for="Newspapers">Newspapers</label><br>
+<input type="checkbox" id="Online"  >
+<label for="Online">Online</label>
+</form>
+<br>
+<p> Pleas Choose your favourite genre of movies.</p>
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#Action">Action</a>
+    <a href="#Romance">Romance</a>
+    <a href="#Comedy">Comedy</a>
+    <a href="#Drama">Drama</a>
+    <a href="#Horror">Horror</a>
+  </div>
+</div>
+<script>
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<br>
+<form>
+	<p> By pressing the "Submit" button you understand that all data entered by you will be uploaded and stored on the web server. </p>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+
+</html>
+
